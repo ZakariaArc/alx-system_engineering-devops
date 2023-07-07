@@ -1,2 +1,2 @@
 #!/bin/bash
-chown hello julien betty
+chown julien betty hello
