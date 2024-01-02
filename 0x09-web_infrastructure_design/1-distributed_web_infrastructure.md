@@ -1,6 +1,6 @@
 # The Distributed Web Infrastructure
 
-![An image of a distributed web infrastructure](1-distributed_web_infrastructure.PNG)
+![An image of a distributed web infrastructure](1-distributed_web_infrastructure.jpg)
 
 ## Description
 
