@@ -6,7 +6,7 @@
 
 This file contains a basic web infrastructure designed to host a website accessible via `www.foobar.com`. The setup lacks firewalls or SSL certificates to safeguard the server's network. Resources such as CPU, RAM, and SSD are shared among the server's components, including the database and application server.
 
-## Details of This Infrastructure
+## The Specifics About This Infrastructure
 
 + Definition of a server:<br/>A server refers to either computer hardware or software that delivers services to other computers, typically referred to as *clients*.
 
@@ -22,7 +22,7 @@ This file contains a basic web infrastructure designed to host a website accessi
 
 + Communication between server and client (user's computer requesting the website):<br/>The exchange occurs over the internet network using the TCP/IP protocol suite.
 
-## Challenges With This Setup
+## The Issues With This Infrastructure
 
 + Multiple Single Points of Failure (SPOFs) exist within this infrastructure.<br/>For instance, if the MySQL database server encounters issues, the entire site would be inaccessible.
 
