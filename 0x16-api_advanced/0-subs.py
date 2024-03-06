@@ -1,22 +1,27 @@
-#!/usr/bin/python3
-"""
-Queries the Reddit API and returns the number of subscribers for a given subreddit.
-"""
-
 import requests
 
+CLIENT_ID = 'cCm22L_jt57JGXZQH8sw3g'
+CLIENT_SECRET = 'pETXZ9frk_FBk2bnIf32IgHhFlnaWw'
+USERNAME = 'KLRthegoat'
+PASSWORD = 'zikoSAFAE123@'
+
+def authenticate():
+    data = {
+        'grant_type': 'password',
+        'username': USERNAME,
+        'password': PASSWORD
+    }
+    auth = requests.auth.HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
+    response = requests.post('https://www.reddit.com/api/v1/access_token', data=data, auth=auth)
+    return response.json().get('access_token')
+
 def number_of_subscribers(subreddit):
-    """
-    Returns the number of subscribers for a given subreddit.
-    
-    Args:
-        subreddit (str): The name of the subreddit to query.
-        
-    Returns:
-        int: The number of subscribers, or 0 if the subreddit is invalid.
-    """
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    access_token = authenticate()
+    headers = {
+        'User-Agent': 'Your script description',
+        'Authorization': f'Bearer {access_token}'
+    }
+    url = f"https://oauth.reddit.com/r/{subreddit}/about.json"
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json().get('data')
